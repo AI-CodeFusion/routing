@@ -1,26 +1,20 @@
-import React from 'react'
+'use client'
 import link from 'next/link'
-const Homepage = () => {
+import React from 'react'
+import {useRouter} from 'next/navigation'
+const Mainpage = () => {
+  const route=useRouter()
   return (
-    <div className='bg-blue-500 h-12  text-xl flex justify-between'>
-      <div >
-<ul className='flex gap-5 text-white m-3 '>
-  <a href="/home">  home</a>
-  <a href="/apply"> apply </a>
-  <a href="/about">about</a>
-</ul>
-      </div>
-
-      <div>
-        <ul className='flex gap-4 text-white m-3 cursor-pointer '>
-        <a href="/signup">signup</a>
-        <a href="/login">login</a>
-        </ul>
-      </div>
-
-</div>
-  
+    <>
+    <h1 className='text text-4xl text-center underline'>This is homepage</h1>
+    <br />
+    <br />
+    <button onClick={()=>route.push('/apply')} className='bg-blue-300 m-3 w-32' >Apply Now</button>
+    <br />
+    <br />
+    <button onClick={()=>route.push('/login')} className='bg-blue-300 m-3 w-32' >login</button>
+    </>
   )
 }
 
-export default Homepage
+export default Mainpage
